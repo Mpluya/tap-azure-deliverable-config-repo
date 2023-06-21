@@ -1,23 +1,22 @@
 apiVersion: carto.run/v1alpha1
 kind: Deliverable
 metadata:
-  name: #@ data.values.workload.metadata.name
-  namespace: #@ data.values.workload.metadata.namespace
-  labels: #@ merge_labels({ "app.kubernetes.io/component": "deliverable", "app.tanzu.vmware.com/deliverable-type": "web" })
+  name: tanzu-java-web-app
+  namespace: mae
+  labels:
+    app.kubernetes.io/part-of: tanzu-java-web-app
+    apps.tanzu.vmware.com/has-tests: "true"
+    apps.tanzu.vmware.com/workload-type: web
+    app.kubernetes.io/component: deliverable
+    app.tanzu.vmware.com/deliverable-type: web
 spec:
-  #@ if/end hasattr(data.values.workload.spec, "serviceAccountName"):
-  serviceAccountName: #@ data.values.workload.spec.serviceAccountName
-
-  #@ if/end is_gitops():
   params:
-    - name: "gitops_ssh_secret"
-      value: #@ param("gitops_ssh_secret")
-
+  - name: gitops_ssh_secret
+    value: tenant-gitops-ssh
   source:
-    #@ if/end is_gitops():
     git:
-      url: #@ git_repository()
+      url: ssh://git@github.com/Mpluya/tap-azure-workload-config-repo.git
       ref:
-        branch: "main"
-    #@ if/end is_monorepo_approach():
-    subPath: #@ "config/" + data.values.workload.metadata.namespace + "/" + data.values.workload.metadata.name
+        branch: main
+    subPath: config/mae/tanzu-java-web-app
+
