@@ -16,6 +16,7 @@ spec:
   source:
     git:
       url: ssh://git@github.com/Mpluya/tap-azure-workload-config-repo.git
-      ref: null
+      ref:
+        branch: '#@ data.values.gitops.branch'
     subPath: config/mae/tanzu-java-web-app
 
