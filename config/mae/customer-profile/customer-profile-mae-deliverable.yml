@@ -14,8 +14,6 @@ metadata:
     no-sonar: "true"
     app.kubernetes.io/component: deliverable
     app.tanzu.vmware.com/deliverable-type: web
-    carto.run/workload-name: customer-profile
-    carto.run/workload-namespace: mae
 spec:
   params:
   - name: gitops_ssh_secret
