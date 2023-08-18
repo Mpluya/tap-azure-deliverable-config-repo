@@ -14,6 +14,13 @@ metadata:
     no-sonar: "true"
     app.kubernetes.io/component: deliverable
     app.tanzu.vmware.com/deliverable-type: web
+    carto.run/cluster-template-name: config-deliverable-template
+    carto.run/resource-name: create-deliverable
+    carto.run/supply-chain-name: source-test-scan-to-url
+    carto.run/template-kind: ClusterConfigTemplate
+    carto.run/template-lifecycle: mutable
+    carto.run/workload-name: customer-profile
+    carto.run/workload-namespace: mae
 spec:
   params:
   - name: gitops_ssh_secret
