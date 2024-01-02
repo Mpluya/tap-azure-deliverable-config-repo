@@ -1,3 +1,5 @@
+#@ load("@ytt:data", "data")
+---
 apiVersion: carto.run/v1alpha1
 kind: Deliverable
 metadata:
@@ -22,9 +24,9 @@ spec:
   - name: gitops_ssh_secret
     value: tenant-gitops-ssh
   source:
-    subPath: config/mae/java-rest-service-azure
+    subPath: config/mae/java-rest-service-azure/ \+ data.values.env
     git:
       url: ssh://git@github.com/Mpluya/tap-azure-workload-config-repo.git
-      ref:
-        branch: main
 
+      ref:
+        branch: #@ data.values.gitops.branch
