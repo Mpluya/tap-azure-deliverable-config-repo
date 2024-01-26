@@ -4,6 +4,7 @@ metadata:
   name: server-java-web-app-1-7-azure
   namespace: mae
   labels:
+    app.kubernetes.io/name: server-java-web-app-1-7-azure
     app.kubernetes.io/part-of: server-java-web-app-1-7-azure
     apps.tanzu.vmware.com/auto-configure-actuators: "true"
     apps.tanzu.vmware.com/has-tests: "true"
