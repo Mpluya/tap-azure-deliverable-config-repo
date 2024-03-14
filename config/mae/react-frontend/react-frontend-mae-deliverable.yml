@@ -4,7 +4,7 @@ metadata:
   name: react-frontend
   namespace: mae
   labels:
-    app.kubernetes.io/part-of: react-frontend
+    app.kubernetes.io/part-of: customer-profile
     apps.tanzu.vmware.com/workload-type: web
     backstage.io/kubernetes-id: react-frontend
     app.kubernetes.io/component: deliverable
