@@ -6,6 +6,7 @@ metadata:
   labels:
     app.kubernetes.io/part-of: react-frontend
     apps.tanzu.vmware.com/workload-type: web
+    backstage.io/kubernetes-id: react-frontend
     app.kubernetes.io/component: deliverable
     app.tanzu.vmware.com/deliverable-type: web
     carto.run/cluster-template-name: config-deliverable-template
