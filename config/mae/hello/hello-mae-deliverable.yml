@@ -4,6 +4,7 @@ metadata:
   name: hello
   namespace: mae
   labels:
+    aggregate-name: hello-system
     app.kubernetes.io/part-of: hello
     apps.tanzu.vmware.com/auto-configure-actuators: "true"
     apps.tanzu.vmware.com/has-tests: "true"
