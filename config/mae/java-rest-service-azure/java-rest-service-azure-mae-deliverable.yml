@@ -11,6 +11,13 @@ metadata:
     backstage.io/kubernetes-id: customer-profile
     app.kubernetes.io/component: deliverable
     app.tanzu.vmware.com/deliverable-type: web
+    carto.run/cluster-template-name: config-deliverable-template
+    carto.run/resource-name: create-deliverable
+    carto.run/supply-chain-name: source-to-url
+    carto.run/template-kind: ClusterConfigTemplate
+    carto.run/template-lifecycle: mutable
+    carto.run/workload-name: java-rest-service-azure
+    carto.run/workload-namespace: mae
 spec:
   params:
   - name: gitops_ssh_secret
